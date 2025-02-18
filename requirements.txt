@@ -1,3 +1,4 @@
 streamlit==1.18.0
 transformers==4.24.0
 PyMuPDF==1.19.6
+tokenizers==0.10.3
