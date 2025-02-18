@@ -2,9 +2,9 @@ import streamlit as st
 from transformers import pipeline
 import fitz  # PyMuPDF
 
-# Load Hugging Face models
-summarizer = pipeline("summarization")
-qa_model = pipeline("question-answering")
+# Load Hugging Face models with specific model names to avoid loading issues
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+qa_model = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")
 
 def summarize_text(text):
     summary = summarizer(text, max_length=150, min_length=30, do_sample=False)
